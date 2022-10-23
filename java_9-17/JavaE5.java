@@ -1,24 +1,22 @@
-import java.util.Optional;
+import java.util.stream.Stream;
 
 public class JavaE5 {
 
+    
 
-    public static void main(String[] args)
-    {Optional<Integer>op
-        =Optional.of(9455);
-    System.out.println("Optional"
-                  +op);
-    op.ifPresentOrElse(
-     (value)
-      ->{System.out.println(
-            "Value is present,its:"
-            +value);},
-         ()
-      ->{System.out.println(
-            "Value is present");});
-        
+    public static void main(String[] args) {
 
+
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                .filter(e -> e > 8)
+                .findFirst()
+                .ifPresentOrElse(System.out::println,
+                        () -> System.out.println("Value doesn't exists"));
+
+
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                .filter(e -> e > 8)
+                .findFirst()
+                .orElseThrow();
     }
-
 }
-
