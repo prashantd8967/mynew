@@ -1,22 +1,24 @@
-import java.util.Arrays;
-import java.util.List;
-
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 public class JavaE2 {
 
+ 
     public static void main(String[] args) {
-         List<Integer>OrderedList=Arrays.asList(1,3,5,7,9,13,16,17,19);
-        
-         System.out.println("Takewhile...");
-         OrderedList.stream()
-         .takeWhile(e->e%2!=0)
-         .forEach(e->System.out.println(e));
-        
-         System.out.println("Dropwhile...");
-         OrderedList.stream()
-         .dropWhile(e->e%2!=0)
-         .forEach(e->System.out.println(e));
+
+
+        System.out.println(IntStream
+                .rangeClosed(1,10)
+                .takeWhile(x->x<=5)
+                .boxed()
+                .collect(Collectors.toList()));
+
+
+        System.out.println(IntStream
+                .rangeClosed(1,10)
+                .dropWhile(x->x<=5)
+                .boxed()
+                .collect(Collectors.toList()));
+
 
     }
-
 }
-
