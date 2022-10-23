@@ -1,11 +1,25 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.*;
 public class Lamb4 {
-    public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        numbers.stream().filter(value -> value % 2 == 0).forEach(System.out::println);
-    }
+	
+	public String name;
+	
+	public Long salary;
+	
+	public String city;
+
+	public Lamb4(String name, Long salary, String city) {
+		super();
+		this.name = name;
+		this.salary = salary;
+		this.city = city;
+	}
+
+	@Override
+	public String toString() {
+		return "Lamb4 [name=" + name + ", salary=" + salary + ", city=" + city + "]";
+	}
+	
+	
+
 }
 
  
